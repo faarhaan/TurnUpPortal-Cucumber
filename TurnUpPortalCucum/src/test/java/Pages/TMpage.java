@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+
 public class TMpage {
     public void CreateTimeRecord(WebDriver driver) throws InterruptedException {
         try {
@@ -109,7 +110,7 @@ public class TMpage {
         }*/
 
     public String GeteditedCode(WebDriver driver) throws InterruptedException {
-        // imp point goto last page before getting code of last page
+        // imp point goto last page before getting
         Thread.sleep(6000);
         WebElement goToLastPageButton = driver.findElement(By.xpath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));
         goToLastPageButton.click();
@@ -118,7 +119,7 @@ public class TMpage {
         return EditedCode.getText();
     }
     public String GeteditedDescription(WebDriver driver) throws InterruptedException {
-       /* // imp point goto last page before getting code of last page
+       /* //  No need to goto last page
         Thread.sleep(5000);
         WebElement goToLastPageButton = driver.findElement(By.xpath("//*[@id=\"tmsGrid\"]/div[4]/a[4]/span"));
         goToLastPageButton.click();
@@ -142,14 +143,17 @@ public class TMpage {
         driver.switchTo().alert().accept();
         Thread.sleep(5000);
         //driver.navigate().refresh();
+    }
+    public String getDeletedCode(WebDriver driver) {
 
-        // Check if Record is deleted or not
-        WebElement deletedCode = driver.findElement(By.xpath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
-        if (!deletedCode.getText().equals("TA-FAR")) {
-            System.out.println("Record is deleted successfully! Test is Passed");
-        } else {
-            System.out.println("Record is not deleted successfully so Test Is Failed");
-        }
+            // Check if Record is deleted or not
+            WebElement deletedCode = driver.findElement(By.xpath("//*[@id=\"tmsGrid\"]/div[3]/table/tbody/tr[last()]/td[1]"));
+            return deletedCode.getText();
+           /* if (!deletedCode.getText().equals("TA-FAR")) {
+                System.out.println("Record is deleted successfully! Test is Passed");
+            } else {
+                System.out.println("Record is not deleted successfully so Test Is Failed");
+            }*/
     }
 
     }

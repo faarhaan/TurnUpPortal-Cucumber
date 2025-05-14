@@ -78,9 +78,22 @@ public class TM_StepDefinition extends CommonDriver {
         Assert.assertEquals(editedCode, Code, "Expected Edited code donot match with Actual Edited code");
         Assert.assertEquals(editedDescription, Description, "Expected Edited description donot match with Actual Description");
     }
-   /* @After
+
+    @When("I delete the time record successfully")
+    public void iDeleteTheTimeRecordSuccessfully() throws InterruptedException {
+        TMpage tMpageObj = new TMpage();
+        tMpageObj.DeleteTimeRecord(driver);
+    }
+
+    @Then("Record should be deleted successfully")
+    public void recordShouldBeDeletedSuccessfully() {
+        TMpage tMpageObj = new TMpage();
+        String newDeletedCode = tMpageObj.getDeletedCode(driver);
+        Assert.assertNotEquals("gamma",newDeletedCode,"record is not deleted");
+    }
+    @After
     public void CloseRun() throws InterruptedException {
         driver.close();
 
-    }*/
+    }
 }

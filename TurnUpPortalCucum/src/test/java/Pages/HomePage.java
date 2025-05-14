@@ -1,4 +1,5 @@
 package Pages;
+import Utilities.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -22,8 +23,8 @@ public class HomePage {
         // Identify administration drop down and perform action click
         WebElement administrationDropdown = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[5]/a/span"));
         administrationDropdown.click();
-        Thread.sleep(5000);
-        // Wait.WaitToBeClickable(driver, "XPath", "/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a", 10);
+        //Thread.sleep(5000);
+        Wait.WaitToBeClickable(driver, "XPath", "/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a", 5);
 
         // Click on option Time and Material
         WebElement TimeAndMaterialOption = driver.findElement(By.xpath("/html/body/div[3]/div/div/ul/li[5]/ul/li[3]/a"));

@@ -22,3 +22,10 @@ As a TurnUp Portal Admin user,
       | alpha | gold      |
       | beta  | silver    |
       | gamma | bronze    |
+
+    @regression  @DeleteTimeRecord
+    Scenario: Delete Time Record
+      Given  I Login to the Portal Successfully
+      When   I navigate to Time and Material Page
+      When   I delete the time record successfully
+      Then   Record should be deleted successfully
